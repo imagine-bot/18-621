@@ -6,6 +6,7 @@ type User = {
   email: string;
   phone: string;
   address: string;
+  city: string;
 };
 
 type Props = {
@@ -25,7 +26,7 @@ export const UserTable: React.FC<Props> = ({ users }) => {
   };
 
   const handleAddUser = () => {
-    setTableData([...tableData, { name: '', email: '', phone: '', address: '' }]);
+    setTableData([...tableData, { name: '', email: '', phone: '', address: '', city: '' }]);
   };
 
   return (
@@ -39,6 +40,7 @@ export const UserTable: React.FC<Props> = ({ users }) => {
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
+            <th>City</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +50,7 @@ export const UserTable: React.FC<Props> = ({ users }) => {
               <td>{user.email}</td>
               <td>{user.phone}</td>
               <td>{user.address}</td>
+              <td>{user.city}</td>
             </tr>
           ))}
         </tbody>
